@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title></title>
+ <title>Blog</title>
  <link href="http://www.kcavagnolo.com/" rel="self"/>
  <link href="http://www.kcavagnolo.com"/>
- <updated>2015-04-25T02:24:22-04:00</updated>
+ <updated>2015-04-25T02:44:35-04:00</updated>
  <id>http://www.kcavagnolo.com</id>
  <author>
    <name>Ken Cavagnolo</name>
