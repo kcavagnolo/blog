@@ -8,8 +8,8 @@ highlighter: pygments
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : 
-tagline: Site Tagline
+title : Blog
+tagline: Blog
 author :
   name : Ken Cavagnolo
   email : ken@kcavagnolo.com

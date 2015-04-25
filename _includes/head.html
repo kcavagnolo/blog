@@ -4,13 +4,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="{{ site.author.name }}">
+    <meta name="author" content="{{ author.name }}">
 
     <title>
       {% if page.title == "Home" %}
-      {{ site.title }} &middot; {{ site.tagline }}
+      {{ title }} &middot; {{ tagline }}
       {% else %}
-      {{ page.title }} &middot; {{ site.title }}
+      {{ page.title }} &middot; {{ title }}
       {% endif %}
     </title>
 
@@ -73,6 +73,6 @@
     <script src="{{ BASE_PATH }}/js/jquery.easing.min.js"></script>
 
     <!-- RSS -->
-    <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ BASE_PATH }}/atom.xml">
+    <link rel="alternate" type="application/atom+xml" title="{{ title }}" href="{{ BASE_PATH }}/atom.xml">
 
 </head>
