@@ -4,7 +4,7 @@
  <title>Blog</title>
  <link href="http://www.kcavagnolo.com/" rel="self"/>
  <link href="http://www.kcavagnolo.com"/>
- <updated>2015-04-25T09:57:26-04:00</updated>
+ <updated>2015-04-25T10:48:11-04:00</updated>
  <id>http://www.kcavagnolo.com</id>
  <author>
    <name>Ken Cavagnolo</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>The Page is Alive!</title>
-   <link href="http://www.kcavagnolo.com/2015/04/23/the-page-is-alive"/>
+   <link href="http://www.kcavagnolo.com/blog/2015/04/23/the-page-is-alive"/>
    <updated>2015-04-23T00:00:00-04:00</updated>
-   <id>http://www.kcavagnolo.com/2015/04/23/the-page-is-alive</id>
+   <id>http://www.kcavagnolo.com/blog/2015/04/23/the-page-is-alive</id>
    <content type="html">&lt;div class=&quot;blurb&quot;&gt;
      &lt;p&gt;This time I truly mean it: hello, world! I have owned the
      domain kcavagnolo.com for many years, and I never did anything
@@ -82,9 +82,9 @@
  
  <entry>
    <title>Test</title>
-   <link href="http://www.kcavagnolo.com/2015/04/22/test-post"/>
+   <link href="http://www.kcavagnolo.com/blog/2015/04/22/test-post"/>
    <updated>2015-04-22T00:00:00-04:00</updated>
-   <id>http://www.kcavagnolo.com/2015/04/22/test-post</id>
+   <id>http://www.kcavagnolo.com/blog/2015/04/22/test-post</id>
    <content type="html">&lt;div class=&quot;blurb&quot;&gt;
      &lt;h2&gt;Hello, world!&lt;/h2&gt;
      &lt;p&gt;The formatting on this page is so busted! But, it&#39;s just a
