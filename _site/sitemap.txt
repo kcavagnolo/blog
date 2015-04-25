@@ -1,0 +1,12 @@
+
+http://www.kcavagnolo.com/archive.html
+http://www.kcavagnolo.com/atom.xml
+http://www.kcavagnolo.com/categories.html
+http://www.kcavagnolo.com/index.html
+http://www.kcavagnolo.com/pages.html
+http://www.kcavagnolo.com/rss.xml
+http://www.kcavagnolo.com/sitemap.txt
+http://www.kcavagnolo.com/tags.html
+
+http://www.kcavagnolo.com/2015/04/23/the-page-is-alive
+http://www.kcavagnolo.com/2015/04/22/test-post

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  {% include head.html %}
+
+  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    {% include nav.html %}
+
+    <!-- filler -->
+    <section id="test_anchor" class="about">
+      <div class="container">
+	{{ content }}
+	{% include tweet.html %}
+	{% include disqus.html %}
+      </div>
+    </section>
+
+    {% include footer.html %}    
+  
+  </body>
+
+</html>

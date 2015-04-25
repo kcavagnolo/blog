@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+        <title></title>
+        <description> - Ken Cavagnolo</description>
+        <link>http://www.kcavagnolo.com</link>
+        <link>http://www.kcavagnolo.com</link>
+        <lastBuildDate>2015-04-25T01:44:22-04:00</lastBuildDate>
+        <pubDate>2015-04-25T01:44:22-04:00</pubDate>
+        <ttl>1800</ttl>
+
+
+        <item>
+                <title>The Page is Alive!</title>
+                <description>&lt;div class=&quot;blurb&quot;&gt;
+     &lt;p&gt;This time I truly mean it: hello, world! I have owned the
+     domain kcavagnolo.com for many years, and I never did anything
+     with it. The plan had always been to expos&amp;eacute; some aspect of
+     my work, which at the time was astrophysics research. But, those
+     efforts usually fell into job hunting season and polishing a site
+     to accompany my resum&amp;eacute;&#39;s.&lt;/p&gt;
+
+     &lt;p&gt;Well, now that I have been out of academia for several years,
+     and I have dabbled long enough in &quot;data science&quot; activities to
+     have a decent portfolio of stuff to share -- this site finally
+     made sense. After 24 hours of mucking around, it&#39;s finally
+     working correctly and I can post to it as a remote platform via
+     some cool automated tools I coded up. Without further ado, the
+     details of how the site came to be, and the accompanying code so
+     someone else can do the same thing.&lt;/p&gt;
+
+     &lt;p&gt;First things first: bite the bullet and buy a custom
+     domain. The simplest route I&#39;ve found in years is [Google
+     Domains](http://domains.google.com). Prices are
+     competitive and the interface is intuitive.&lt;/p&gt;
+
+     &lt;p&gt;The steps I need to describe:&lt;br /&gt;
+     &lt;ul&gt;
+     &lt;li&gt;google domains&lt;/li&gt;
+     &lt;li&gt;setup github pages&lt;/li&gt;
+     &lt;li&gt;dns and email forwarding for custom domain&lt;/li&gt;
+     &lt;li&gt;starter site template&lt;/li&gt;
+     &lt;li&gt;hacking together the pieces I liked and needed&lt;/li&gt;
+     &lt;li&gt;building a local instance of github pages w/ jekyll&lt;/li&gt;
+     &lt;li&gt;validating all the code and testing&lt;/li&gt;
+     &lt;li&gt;kick the whole thing live&lt;/li&gt;
+     &lt;/ul&gt;
+     &lt;/p&gt;
+
+     &lt;p&gt;The shit that&#39;s still broken:&lt;br /&gt;
+     &lt;ul&gt;
+     &lt;li&gt;tags&lt;/li&gt;
+     &lt;li&gt;fancybox&lt;/li&gt;
+     &lt;li&gt;ipython integration&lt;/li&gt;
+     &lt;li&gt;plotly integration&lt;/li&gt;
+     &lt;li&gt;zero branding (logo, tagline, presented material)&lt;/li&gt;
+     &lt;li&gt;actually pushing code to Kaggle&lt;/li&gt;
+     &lt;/ul&gt;
+     &lt;/p&gt;
+
+     &lt;p&gt;Small victory today.&lt;/p&gt;
+
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;build_model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;X_test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;2&lt;/span&gt;     &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DecisionTreeClassifier&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;3&lt;/span&gt;     &lt;span class=&quot;n&quot;&gt;samples&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parallelize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Bootstrap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;4&lt;/span&gt;     &lt;span class=&quot;n&quot;&gt;vote_tally&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;samples&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;5&lt;/span&gt;         &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X_test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;6&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vote_increment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zero_matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n_test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_ys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;7&lt;/span&gt;     &lt;span class=&quot;n&quot;&gt;y_estimate_vote&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argmax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vote_tally&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;8&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;accuracy_score&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y_estimate_vote&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/div&gt;
+</description>
+                <link>http://www.kcavagnolo.com/2015/04/23/the-page-is-alive</link>
+                <guid>http://www.kcavagnolo.com/2015/04/23/the-page-is-alive</guid>
+                <pubDate>2015-04-23T00:00:00-04:00</pubDate>
+        </item>
+
+        <item>
+                <title>Test</title>
+                <description>&lt;div class=&quot;blurb&quot;&gt;
+     &lt;h2&gt;Hello, world!&lt;/h2&gt;
+     &lt;p&gt;The formatting on this page is so busted! But, it&#39;s just a
+     test of automating the generation scripts. Be patient!&lt;/p&gt;
+&lt;/div&gt;
+</description>
+                <link>http://www.kcavagnolo.com/2015/04/22/test-post</link>
+                <guid>http://www.kcavagnolo.com/2015/04/22/test-post</guid>
+                <pubDate>2015-04-22T00:00:00-04:00</pubDate>
+        </item>
+
+
+</channel>
+</rss>
