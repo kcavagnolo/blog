@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7 ]><html lang="en-US" class="no-js ie ie6 lte7 lte8 lte9"><![endif]-->
+<!--[if IE 7 ]><html lang="en-US" class="no-js ie ie7 lte7 lte8 lte9"><![endif]-->
+<!--[if IE 8 ]><html lang="en-US" class="no-js ie ie8 lte8 lte9"><![endif]-->
+<!--[if IE 9 ]><html lang="en-US" class="no-js ie ie9 lte9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en-US" class="no-js"><!--<![endif]-->
+
+<head>
+
+    <!-- metadata -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    <meta name="author" content="{{ site.author.name }}">
+    <title>{{ page.title }}</title>
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="http://www.kcavagnolo.com/xmlrpc.php">
+    <link href="{{ BASE_PATH }}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ BASE_PATH }}/css/kcavagnolo.css" rel="stylesheet">
+    <link href="{{ BASE_PATH }}/css/code.css" rel="stylesheet">
+    <link href="{{ BASE_PATH }}/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- javascripts -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="http://www.kcavagnolo.com/wp_content/js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="http://www.kcavagnolo.com/wp_content/js/grayscale.js"></script>
+    <script type="text/javascript" src="http://www.kcavagnolo.com/wp_content/js/bootstrap.min.js"></script>
+
+    <!-- Custom favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ BASE_PATH }}/public/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ BASE_PATH }}/public/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ BASE_PATH }}/public/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ BASE_PATH }}/public/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ BASE_PATH }}/public/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ BASE_PATH }}/public/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ BASE_PATH }}/public/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ BASE_PATH }}/public/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ BASE_PATH }}/public/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="{{ BASE_PATH }}/public/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ BASE_PATH }}/public/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="{{ BASE_PATH }}/public/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="{{ BASE_PATH }}/public/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="{{ BASE_PATH }}/public/manifest.json">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- atom & rss feed -->
+    <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-blog navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+	  <i class="fa fa-bars" style="color: #fff;"></i>
+	</button>
+	<a class="navbar-brand page-scroll" href="/">
+	  <i class="fa fa-home"></i>  <span class="light">K</span>Cavagnolo
+	</a>
+      </div>
+      <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+	<ul class="nav navbar-nav">
+	  <li class="hidden">
+            <a href="{{ HOME_PATH }}"></a>
+	  </li>
+	  {% assign pages_list = site.pages %}
+	  {% assign group = 'navigation' %}
+	  {% include JB/pages_list %}
+	</ul>
+      </div>
+    </div>
+  </nav>
+  
+  <section id="test_anchor" class="about">
+    <div class="container">
+      {{ content }}
+      {% if page.tweets %}
+      <div class="blurb">
+	<p>If you liked this post, you can <a href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&amp;text={{ page.title }}&amp;via=KenCavagnolo" target="_blank">tweet it out</a> or <a href="https://twitter.com/KenCavagnolo">follow me on Twitter</a>.</p>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+	<div class="col-lg-10 col-lg-offset-1 text-center">
+          <p class="text-muted">
+            &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. All Rights Reserved.</p>
+	</div>
+      </div>
+    </div>
+  </footer>
+
+  {% include JB/analytics %}
+  
+  </body>
+
+</html>
