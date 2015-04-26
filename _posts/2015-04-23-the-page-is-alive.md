@@ -1,12 +1,15 @@
 ---
 layout: post
+title: The Blog is Alive!
+tagline: "Small Successes Feel Amazing"
+author: Ken Cavagnolo
+category : lessons
+tags: [javascript, jquery, html5, python, jekyll, git]
 comments: true
 tweets: false
-title: The Blog is Alive!
-tagline: Small Successes Feel Amazing
-tags: javascript jquery html5 python jekyll git
-author: Ken Cavagnolo
 ---
+
+{% include JB/setup %}
 
 <div class="blurb">
      <p>This time I truly mean it: hello, world! I have owned the
@@ -55,15 +58,15 @@ author: Ken Cavagnolo
 
      <p>Small victory today.</p>
 
-{% highlight python linenos %}
-def build_model(X, X_test, y):
-    model = DecisionTreeClassifier()
-    samples = sc.parallelize(Bootstrap(y.size))
-    vote_tally = samples.map(lambda (index, _):
-        model.fit(X[index], y[index]).predict(X_test)
-    ).map(vote_increment).fold(zero_matrix(n_test, n_ys), np.add)
-    y_estimate_vote = np.argmax(vote_tally, axis = 1)
-    return accuracy_score(y_estimate_vote)
-{% endhighlight %}
+     {% highlight python linenos %}
+     def build_model(X, X_test, y):
+     model = DecisionTreeClassifier()
+     samples = sc.parallelize(Bootstrap(y.size))
+     vote_tally = samples.map(lambda (index, _):
+     model.fit(X[index], y[index]).predict(X_test)
+     ).map(vote_increment).fold(zero_matrix(n_test, n_ys), np.add)
+     y_estimate_vote = np.argmax(vote_tally, axis = 1)
+     return accuracy_score(y_estimate_vote)
+     {% endhighlight %}
 
 </div>

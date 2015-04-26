@@ -7,14 +7,19 @@ author: Ken Cavagnolo
 
 {% include JB/setup %}
 
+<div class="page-header">
+<h1>Science Dataist<small>... or data scientist, something like that.</small></h1>
+<h4>A blog about data science.</h4>
+</div>
+
 <div class="posts">
   {% for post in site.posts %}
   <article class="post">
-    <h1 class="post-title">
+    <h2 class="post-title">
       <a href="{{ BASE_PATH }}{{ post.url }}">
         {{ post.title }} {% if post.tagline %}&mdash; {{ post.tagline }} {% endif %}
       </a>
-    </h1>
+    </h2>
     {% if post.author %} By {{ post.author }} on {% endif %}
     <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time><br>
     {% for tag in post.tags %}<a href="/tag/{{ tag }}/">{{ tag }}</a> {% endfor %}
