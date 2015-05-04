@@ -29,34 +29,74 @@ tweets: false
      someone else can do the same thing.</p>
 
      <p>First things first: bite the bullet and buy a custom
-     domain. The simplest route I've found in years is [Google
-     Domains](http://domains.google.com). Prices are
-     competitive and the interface is intuitive.</p>
+     domain. The simplest route I've found in years is <a
+     href="http://domains.google.com" target="_blank">Google
+     Domains</a>. Prices are competitive and the interface is
+     intuitive. I recommend choosing to keep the registrar info
+     private during registration, it cuts down on spam and won't
+     expose personal info to an unknown audience.</p>
 
-     <p>The steps I need to describe:<br>
-     <ul>
-     <li>google domains</li>
-     <li>setup github pages</li>
-     <li>dns and email forwarding for custom domain</li>
-     <li>starter site template</li>
-     <li>hacking together the pieces I liked and needed</li>
-     <li>building a local instance of github pages and projects w/ jekyll</li>
-     <li>installing jekyll-bootstrap to handle subdir instance of blog</li>
-     <li>validating all the code and testing</li>
-     <li>kick the whole thing live</li>
-     </ul>
-     </p>
+     <p>After you've got a custom domain secured, and if you're not
+     hosting a commercial site, use <a href="https://pages.github.com"
+     target="_blank">GitHub Pages</a> as the hosting service. It's
+     free, robust, and super simple if you're comfortable with coding
+     in HTML5 and Git. The catch is that all website code will be
+     public unless you have a paid GitHub account and create a private
+     repository. Once you follow the tutorial in the link above, <a
+     href="https://help.github.com/articles/adding-a-cname-file-to-your-repository/"
+     target="_blank">setup CNAME file</a> which points back to your
+     newly acquired custom domain. This step connects your custom
+     domain to your GitHub domain <strong><em>on the GitHub side
+     only</em></strong>.</p>
 
-     <p>The shit that's still broken:<br>
+     <p>To connect the domains on the Google side, go back to Google
+     Domains, and on the dashboard, click the DNS icon for your
+     purchased domain name. At the top, select the radio button next
+     to the Google name servers. At the bottom, setup the panel like in
+     the image below. These settings instruct Google to allow the
+     connection of the domain names. If you wait 10-15 minutes, the
+     records will update in the tubes of the internet, and you should
+     be able to type in your domain name in a browser and not get a
+     404 error.</p>
+
+     <p><img class="img-basic"
+     src="http://www.kcavagnolo.com/img/gdomains.png" alt="DNS Setup"></p>
+
+     <p>Cool, you've got a live connection behind-the-scenes if you
+     don't get a 404. So, what now? Let's put up a web page. I am a
+     big fan of the folks at <a href="http://startbootstrap.com"
+     target="_blank">Start Bootstrap</a> because I believe in what
+     they're doing for web design and their content is open
+     source. Look through the templates, pick one you like, and click
+     'Download.' Unpack the zip file into your GitHub Pages
+     repository. For now, that's all you need to do. If you visit your
+     domain name again, instead of seeing a blank page or some default
+     message from Google, you should see the template you
+     downloaded. It's not just a domain anymore, it's a web
+     site. Congrats, get to modifying the template HTML!</p>
+
+     <p>If you'd like to go one step further and add an email address
+     for your custom domain, e.g. ken@kcavagnolo.com, this can also be
+     accomplished without much effort. I highly recommend using GMail
+     for forwarding services for a variety of reasons. There is a
+     walkthrough about <a
+     href="https://support.google.com/domains/answer/3251241?hl=en"
+     target="_blank">adding email forwarding in Google Domains</a>. Be
+     sure to read the section at the bottom about sending email from a
+     forwarding address.</p>
+
+     <p>One more step I need to describe is building a local instance
+     of github pages and projects w/ jekyll, and installing
+     jekyll-bootstrap to handle plumbing/subdir instance of a blog
+     (like this one). The shit that's still broken:<br>
      <ul>
      <li>fancybox</li>
      <li>ipython integration</li>
      <li>plotly integration</li>
      <li>zero branding (logo, tagline, presented material)</li>
+     <li>native code highlighting, like the below</li>
      </ul>
      </p>
-
-     <p>Small victory today.</p>
 
      {% highlight python linenos %}
      def build_model(X, X_test, y):
@@ -68,5 +108,4 @@ tweets: false
      y_estimate_vote = np.argmax(vote_tally, axis = 1)
      return accuracy_score(y_estimate_vote)
      {% endhighlight %}
-
 </div>
