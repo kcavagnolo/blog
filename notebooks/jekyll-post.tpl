@@ -1,12 +1,15 @@
 {% extends 'markdown.tpl' %}
 
 {%- block header -%}
+
 ---
 layout: post
 title: "{{resources['metadata']['name']}}"
-tags:
-    - python
-    - notebook
+author: Ken Cavagnolo
+category : ipynotebooks
+tags: [python, notebook, jupyter]
+comments: true
+tweets: true
 ---
 {%- endblock header -%}
 
