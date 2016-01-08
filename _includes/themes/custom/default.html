@@ -28,11 +28,11 @@
     <![endif]-->
 
     <!-- javascripts -->
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="http://www.kcavagnolo.com/wp_content/js/jquery.min.js"></script>
     <script type="text/javascript" src="http://www.kcavagnolo.com/wp_content/js/jquery.easing.min.js"></script>
     <script type="text/javascript" src="http://www.kcavagnolo.com/wp_content/js/grayscale.js"></script>
     <script type="text/javascript" src="http://www.kcavagnolo.com/wp_content/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://www.kcavagnolo.com/wp_content/js/ganalytics.js"></script>
 
     <!-- Custom favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="http://www.kcavagnolo.com/public/apple-touch-icon-57x57.png">
@@ -92,7 +92,9 @@
       {{ content }}
       {% if page.tweets %}
       <div class="blurb">
-	<p>If you liked this post, you can <a href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&amp;text={{ page.title }}&amp;via=KenCavagnolo" target="_blank">tweet it out</a> or <a href="https://twitter.com/KenCavagnolo">follow me on Twitter</a>.</p>
+	<p>If you liked this post, you
+	can <a href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&amp;text={{ page.title }}&amp;via=KenCavagnolo" target="_blank">tweet it out</a>	or <a href="https://twitter.com/KenCavagnolo">follow me on
+	Twitter</a>.</p>
       </div>
       {% endif %}
     </div>
@@ -103,7 +105,8 @@
       <div class="row">
 	<div class="col-lg-10 col-lg-offset-1 text-center">
           <p class="text-muted">
-            &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. All Rights Reserved.</p>
+	    &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}'s work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</p>
+	  <a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/3.0/88x31.png" /></a>
 	</div>
       </div>
     </div>
