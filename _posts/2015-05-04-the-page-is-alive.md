@@ -6,7 +6,7 @@ author: Ken Cavagnolo
 category : lessons
 tags: [javascript, jquery, html5, python, jekyll, git]
 comments: true
-tweets: false
+tweets: true
 ---
 
 {% include JB/setup %}
