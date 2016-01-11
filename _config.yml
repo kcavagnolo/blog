@@ -4,7 +4,7 @@ exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 highlighter: pygments
 
 title : Science Dataist
-description: A blog about data science tinkering and hacking.
+description: My data science tinkering and thoughts.
 author :
   name : Ken Cavagnolo
   email : ken@kcavagnolo.com
@@ -15,7 +15,7 @@ author :
 production_url : http://www.kcavagnolo.com/blog
 
 JB :
-  version : 0.3.0
+  version : 1.0.0
   BASE_PATH : http://www.kcavagnolo.com/blog
   ASSET_PATH : false
   archive_path: /archive.html
