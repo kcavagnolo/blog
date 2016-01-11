@@ -5,41 +5,42 @@
 <div class="row post-full">
   <div class="col-xs-12">
     <div class="date">
-      <span>{{ page.date | date_to_long_string }}</span>
+      <span>Posted: {{ page.date | date_to_long_string }}</span>
     </div>
+    <br>
     <div class="content">
       {{ content }}
     </div>
 
-  <!-- {% unless page.categories == empty %} -->
-  <!--   <ul class="tag_box inline"> -->
-  <!--     <li><i class="glyphicon glyphicon-open"></i></li> -->
-  <!--     {% assign categories_list = page.categories %} -->
-  <!--     {% include JB/categories_list %} -->
-  <!--   </ul> -->
-  <!-- {% endunless %} -->
+    <!-- {% unless page.categories == empty %} -->
+    <!--   <ul class="tag_box inline"> -->
+    <!--     <li><i class="glyphicon glyphicon-open"></i></li> -->
+    <!--     {% assign categories_list = page.categories %} -->
+    <!--     {% include JB/categories_list %} -->
+    <!--   </ul> -->
+    <!-- {% endunless %} -->
 
-  <!-- {% unless page.tags == empty %} -->
-  <!--   <ul class="tag_box inline"> -->
-  <!--     <li><i class="glyphicon glyphicon-tags"></i></li> -->
-  <!--     {% assign tags_list = page.tags %} -->
-  <!--     {% include JB/tags_list %} -->
-  <!--   </ul> -->
-  <!-- {% endunless %} -->
+    <!-- {% unless page.tags == empty %} -->
+    <!--   <ul class="tag_box inline"> -->
+    <!--     <li><i class="glyphicon glyphicon-tags"></i></li> -->
+    <!--     {% assign tags_list = page.tags %} -->
+    <!--     {% include JB/tags_list %} -->
+    <!--   </ul> -->
+    <!-- {% endunless %} -->
 
     <hr>
     <ul class="pagination">
-    {% if page.previous %}
+      {% if page.previous %}
       <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&laquo; Previous Post</a></li>
-    {% else %}
+      {% else %}
       <li class="prev disabled"><a>&larr; Previous Post</a></li>
-    {% endif %}
+      {% endif %}
       <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a></li>
-    {% if page.next %}
+      {% if page.next %}
       <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next Post &raquo;</a></li>
-    {% else %}
+      {% else %}
       <li class="next disabled"><a>Next Post &rarr;</a>
-    {% endif %}
+	{% endif %}
     </ul>
     <hr>
 
@@ -50,7 +51,6 @@
 	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
       </script>
     </div>
-
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_shortname = 'kcavagnolo';
