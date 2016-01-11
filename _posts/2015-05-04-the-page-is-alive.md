@@ -1,7 +1,7 @@
 ---
 layout: post
-title: The Blog is Alive!
-tagline: "Small Successes Feel Amazing"
+title: Yet Another Blog
+tagline: Small Successes
 author: Ken Cavagnolo
 category : lessons
 tags: [javascript, jquery, html5, python, jekyll, git]
