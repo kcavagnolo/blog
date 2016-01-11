@@ -86,24 +86,19 @@
       </div>
     </div>
   </nav>
-  
+
   <section id="test_anchor" class="about">
     <div class="container">
       {{ content }}
-      {% if page.tweets %}
-      <div class="blurb">
-	<p>If you liked this post, <a href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&amp;text={{ page.title }}&amp;via=KenCavagnolo" target="_blank">tweet it out</a> or <a href="https://twitter.com/KenCavagnolo">follow me on Twitter</a>.</p>
-      </div>
-      {% endif %}
     </div>
   </section>
-
+  
   <footer>
     <div class="container">
       <div class="row">
 	<div class="col-lg-10 col-lg-offset-1 text-center">
           <p class="text-muted">
-	    &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}'s work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</p>
+	    &copy; {{ site.time | date: '%Y' }} Posts are licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
 	  <a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/3.0/88x31.png" /></a>
 	</div>
       </div>
