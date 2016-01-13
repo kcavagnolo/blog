@@ -17,29 +17,26 @@ started w/ a few obs
 about 10 files each
 files varied in size from few Mb to few 100's Mb
 mosaic radio files get even larger (10's Gb)
-archival study grew into let's do a sample
-to let's do a survey
-to let's do them all!
-started with managing cores on my machine
-moved to managing multiple machines on "cluster"
-moved to 'shuttler' which shipped products to any available resource
-moved to xgrid on campus computing labs silent at night
+sample study grew into archival study
+which grew into "let's do them all!"
+started with micromanaging cores on local machine
+moved on to managing multiple machines on virtual "cluster" (shuttler)
+moved on to xgrid on campus computing labs silent at night
 
-crazy thing? CORP and Shuttler were written completely in Perl and
-IDL. That it worked at all is a miracle.
+CORP and Shuttler written completely in Perl and IDL. That it worked
+at all is a miracle.
 
 shuttler eventually was running 24/7 shipping data and processes back
-and forth between my machine (head node) to literally any machine on
+and forth between my machine ("headnode") to literally any machine on
 campus running xgrid that had an idle core
 
 the end result: reduced from raw data every observation in the CXC
 archive and extracted finished data products for all galaxies or
-galaxy clusters
+galaxy clusters (link to accept db)
 
-why since that wasn't part of my science objective? because I
-could. it was badass infrastructure that was crushing a time consuming
-problem. I got to spend time inspecting the finished results and doing
-science.
+why do this since that wasn't part of my science objective? it was
+available resources that helped crush a time consuming problem. I got
+re-focus time on inspecting the finished results and doing science.
 
 I once calculated my actual and automated workloads (a bad idea for a
 grad student because you discover how little you make per labor hour),
@@ -56,7 +53,6 @@ attached anywhere to Megan and Mark's work, let alone to have had a
 subtle impact on their thinking that led to the (soon to be seminal?)
 precipitation papers.
 
-things I wish I knew then that I know now:
-hadoop
+things I wish had been mature back then: hadoop and spark
 
 </div>
