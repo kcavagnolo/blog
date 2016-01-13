@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Start an AWS Spark Cluster in 5 Minutes
+title: AWS Spark Cluster in 5 Minutes
+tagline: How-to create and access a Spark cluster for ad hoc analysis or big jobs
 author: Ken Cavagnolo
 category : lessons
 tags: [spark, python, aws, osx]
