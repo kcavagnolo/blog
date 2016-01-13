@@ -13,7 +13,7 @@ tweets: false
 
 <div class="blurb">
 
-started w/ a few obs
+<p>started w/ a few obs
 about 10 files each
 files varied in size from few Mb to few 100's Mb
 mosaic radio files get even larger (10's Gb)
@@ -21,7 +21,7 @@ sample study grew into archival study
 which grew into "let's do them all!"
 started with micromanaging cores on local machine
 moved on to managing multiple machines on virtual "cluster" (shuttler)
-moved on to xgrid on campus computing labs silent at night
+moved on to xgrid on campus computing labs silent at night</p>
 
 CORP and Shuttler written completely in Perl and IDL. That it worked
 at all is a miracle.
