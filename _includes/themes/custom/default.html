@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
 <!--[if lt IE 7 ]><html lang="en-US" class="no-js ie ie6 lte7 lte8 lte9"><![endif]-->
 <!--[if IE 7 ]><html lang="en-US" class="no-js ie ie7 lte7 lte8 lte9"><![endif]-->
 <!--[if IE 8 ]><html lang="en-US" class="no-js ie ie8 lte8 lte9"><![endif]-->
@@ -8,56 +9,72 @@
 
 <head>
 
-    <!-- metadata -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-    <meta name="author" content="{{ site.author.name }}">
-    <title>{{ page.title }}</title>
-    <link rel="profile" href="http://gmpg.org/xfn/11">
-    <link href="http://www.kcavagnolo.com/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://www.kcavagnolo.com/css/kcavagnolo.css" rel="stylesheet">
-    <link href="http://www.kcavagnolo.com/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://www.kcavagnolo.com/css/code.css" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <!-- metadata -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:type" content="{{ }}article"/>
+  <meta property="og:title" content="{{ page.title }}"/>
+  <meta property="og:description" content="{% if page.tagline %}{{page.tagline}}{% endif %}"/>
+  <meta property="og:url" content="http://www.kcavagnolo/blog{{ page.url }}"/>
+  <meta property="og:article:published_time" content="{{ page.date }}"/>
+  <meta property="og:article:author" content="{{ page.author }}"/>
+  
+  <!-- site info -->
+  <title>{{ page.title }}</title>
+  {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+  <meta name="author" content="{{ site.author.name }}">
+  <meta name="keywords" content="Ken, Kenneth, Cavagnolo, scientist, product, manager, astrophysicist, physics, developer, data, programmer, engineer, Atlanta, Knoxville, Austin, Michigan State, Georgia Tech, PhD, Ph.D., resume, CV, publications, speaker, python, R, C++, C, SQL, NoSQL, Hadoop, Spark, JavaScript, Cassandra, node.js, d3.js, machine learning, analytics, math, statistics, science">
+  
+  <!-- site functionality -->
+  <link rel="canonical" href="http://kcavagnolo.com">
+  <link rel="profile" href="http://gmpg.org/xfn/11">
+  <link rel="pingback" href="http://www.kcavagnolo.com/xmlrpc.php">
+  <script type="text/javascript" src="http://www.kcavagnolo.com/wp_content/js/loadCSS.js"></script>
+  <script>loadCSS( "http://www.kcavagnolo.com/css/bootstrap.min.css" )</script>
+  <script>loadCSS( "http://www.kcavagnolo.com/css/kcavagnolo.css" )</script>
+  <script>loadCSS( "http://www.kcavagnolo.com/font-awesome/css/font-awesome.min.css" )</script>
+  <script>loadCSS( "http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" )</script>
+  <script>loadCSS( "http://www.kcavagnolo.com/css/code.css" )</script>
+  
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="http://www.kcavagnolo.com/public/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="http://www.kcavagnolo.com/public/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="http://www.kcavagnolo.com/public/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="http://www.kcavagnolo.com/public/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="http://www.kcavagnolo.com/public/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="http://www.kcavagnolo.com/public/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="http://www.kcavagnolo.com/public/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="http://www.kcavagnolo.com/public/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="http://www.kcavagnolo.com/public/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="http://www.kcavagnolo.com/public/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="http://www.kcavagnolo.com/public/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="http://www.kcavagnolo.com/public/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="http://www.kcavagnolo.com/public/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="http://www.kcavagnolo.com/public/manifest.json">
+  <link rel="shortcut icon" href="http://www.kcavagnolo.com/public/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="public/mstile-144x144.png">
+  <meta name="msapplication-config" content="public/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  
+  <!-- javascripts -->
+  <script type="text/javascript" src="http://www.kcavagnolo.com/wp_content/js/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.kcavagnolo.com/wp_content/js/jquery.easing.min.js"></script>
+  <script type="text/javascript" src="http://www.kcavagnolo.com/wp_content/js/grayscale.js"></script>
+  <script type="text/javascript" src="http://www.kcavagnolo.com/wp_content/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://www.kcavagnolo.com/wp_content/js/ganalytics.js"></script>
 
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- javascripts -->
-    <script type="text/javascript" src="http://www.kcavagnolo.com/wp_content/js/jquery.min.js"></script>
-    <script type="text/javascript" src="http://www.kcavagnolo.com/wp_content/js/jquery.easing.min.js"></script>
-    <script type="text/javascript" src="http://www.kcavagnolo.com/wp_content/js/grayscale.js"></script>
-    <script type="text/javascript" src="http://www.kcavagnolo.com/wp_content/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://www.kcavagnolo.com/wp_content/js/ganalytics.js"></script>
-
-    <!-- Custom favicon -->
-    <link rel="apple-touch-icon" sizes="57x57" href="http://www.kcavagnolo.com/public/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="http://www.kcavagnolo.com/public/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="http://www.kcavagnolo.com/public/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="http://www.kcavagnolo.com/public/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="http://www.kcavagnolo.com/public/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="http://www.kcavagnolo.com/public/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="http://www.kcavagnolo.com/public/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="http://www.kcavagnolo.com/public/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="http://www.kcavagnolo.com/public/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="http://www.kcavagnolo.com/public/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="http://www.kcavagnolo.com/public/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="http://www.kcavagnolo.com/public/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="http://www.kcavagnolo.com/public/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="http://www.kcavagnolo.com/public/manifest.json">
-    <link rel="shortcut icon" href="http://www.kcavagnolo.com/public/favicon.ico">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-TileImage" content="http://www.kcavagnolo.com/public/mstile-144x144.png">
-    <meta name="msapplication-config" content="http://www.kcavagnolo.com/public/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-
-    <!-- atom & rss feed -->
-    <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
-    <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  <!-- atom & rss feed -->
+  <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+  <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
 
 </head>
 

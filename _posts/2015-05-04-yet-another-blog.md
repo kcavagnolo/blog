@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Yet Another Blog
-tagline: Small Successes
+title: Custom Website in 30 Minutes
+tagline: How I setup, built, and loaded a website on a custom domain using Github and Google
 author: Ken Cavagnolo
 category : lessons
 tags: [javascript, jquery, html5, python, jekyll, git]

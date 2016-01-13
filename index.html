@@ -24,7 +24,8 @@ author : Ken Cavagnolo
   <article class="post">
     <h2 class="post-title">
       <a href="{{ BASE_PATH }}{{ post.url }}">
-        {{ post.title }} {% if post.tagline %}&mdash; {{ post.tagline }} {% endif %}
+        <!-- {{ post.title }} {% if post.tagline %}&mdash; {{ post.tagline }} {% endif %} -->
+	{{ post.title }}
       </a>
     </h2>
     {% if post.author %} By {{ post.author }} on {% endif %}
