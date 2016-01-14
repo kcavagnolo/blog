@@ -1,12 +1,18 @@
 ---
 layout: post
-title: "Testing IPython Notebook Integration"
-tagline: "Testing"
+title: "IPython Notebook Integration"
+tagline: "Testing functionality"
 author: Ken Cavagnolo
 category: ipynotebooks
 tags: [python, notebook, jupyter]
 comments: true
 ---
+
+Credit to Matt Wittmann for <a
+href="http://mcwitt.github.io/2015/04/29/jekyll_blogging_with_ipython3/"
+target="_blank">posting about his solution to posting ipython
+notebooks in Jekyll.</a> Since my blog lives in /blog on the server, I
+had to tweak the script he posts so that images go to: <code>site.baseurl/<b>blog/</b>notebooks/</code>.
 
 # Define the problem
 
@@ -131,7 +137,7 @@ sb.pairplot(iris_data.dropna(), hue='Name')
 
 
 
-![png]({{ site.baseurl }}/notebooks/test_files/test_3_1.png)
+![png]({{ site.baseurl }}/blog/notebooks/test_files/test_3_1.png)
 
 
 **In [34]:**

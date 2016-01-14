@@ -13,7 +13,7 @@ c.Exporter.file_extension = '.md'
 def path2url(path):
     """Turn a file path into a URL"""
     parts = path.split(os.path.sep)
-    return '{{ site.baseurl }}/notebooks/' + '/'.join(quote(part) for part in parts)
+    return '{{ site.baseurl }}/blog/notebooks/' + '/'.join(quote(part) for part in parts)
 
 c.MarkdownExporter.filters = {'path2url': path2url}
 
