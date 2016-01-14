@@ -12,11 +12,11 @@ comments: true
 here: <a href="https://plot.ly/python/ipython-notebook-tutorial"
 target="_blank">Plotly Tutorial</a></p>
 
-<p>In order to make the process described in the [IPython Noterbook
-Integration post]({% post_url 2015-06-04-ipynb-testing %}) function
-correctly, it needs a tweak. Plotly images have tags that sometimes
-lose their whitespace, e.g. note the lack of whitespace between the
-tags style and seamless
+<p>In order to make the process described in the <a href="{% post_url
+2015-06-04-ipynb-testing %}" target="_blank">IPython Notebook
+Integration post</a> function correctly, it needs a tweak. Plotly
+images have tags that sometimes lose their whitespace, e.g. note the
+lack of whitespace between the tags style and seamless
 <code>style="border:none;"seamless="seamless"</code>. This causes the
 iframe containing the Plotly image to not render correctly. To fix the
 figures, I run the below on the output ipynb:</p>
