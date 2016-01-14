@@ -69,7 +69,7 @@ target="_blank">Download Spark and save tarball somewhere</a> Install Spark and 
 <br>
 {% highlight tcsh %}
 [local]$ tar -xvzf spark-x.x.x.tar; cd spark-x.x.x
-[local]$ sbt/sbt clean assembly
+[local]$ build/sbt clean assembly
 [local]$ echo 'setenv SPARK_HOME /usr/local/spark' >> ~/.cshrc
 [local]$ echo 'setenv PYSPARK_DRIVER_PYTHON ipython' >> ~/.cshrc
 [local]$ echo 'set path=($path $SPARK_HOME/bin)' >> ~/.cshrc
