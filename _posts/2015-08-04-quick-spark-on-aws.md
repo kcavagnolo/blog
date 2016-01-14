@@ -38,6 +38,7 @@ href="https://aws-portal.amazon.com/gp/aws/developer/registration/index.html"
 target="_blank">create an AWS account</a> and <b>retain your access
 and secret keys</b>. Using those keys, set some local environment
 variables so you can reference them later:
+<br><br>
 {% highlight tcsh %}
 [local]$ echo 'setenv AWS_ACCESS_KEY "your-aws-access-key-id"' >> ~/.cshrc
 [local]$ echo 'setenv AWS_SECRET_KEY "your-aws-secret-key"' >> ~/.cshrc
@@ -52,7 +53,7 @@ AWS_SECRET_KEY=<your secret>
 Now <a href="http://aws.amazon.com/cli/" target="_blank">install the
 AWS command line interface (CLI)</a> which is much simpler for
 accessing AWS than the console:
-
+<br><br>
 {% highlight tcsh%}
 [local]$ wget https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
 [local]$ unzip awscli-bundle.zip
@@ -64,14 +65,14 @@ accessing AWS than the console:
 To access the cluster, you'll need an ssh keypair. Amazon recommends
 using their IAM profiles now since the CLI keys are global access to
 your account. That's a risk/simplicity left to you:
-
+<br><br>
 {% highlight tcsh %}
 [local]$ aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text > ~/.ssh/aws.pem
 [local]$ chmod 400 ~/.ssh/aws.pem
 {% endhighlight %}
 
 With the keys on your machine and in your AWS account, you can now build a cluster:
-
+<br><br>
 {% highlight tcsh %}
 [local]$ aws emr create-cluster --name SparkCluster --release-label emr-4.2.0 --applications Name=Spark --ec2-attributes KeyName=my-key-pair --instance-type m3.xlarge --instance-count 3 --use-default-roles
 
@@ -81,7 +82,7 @@ With the keys on your machine and in your AWS account, you can now build a clust
 {% endhighlight %}
 
 Check that it's running as expected, this can take 1-10 minutes sometimes:
-
+<br><br>
 {% highlight tcsh %}
 [local]$ aws emr list-clusters
 
@@ -93,7 +94,7 @@ stuff...
 {% endhighlight %}
 
 Let's connect to the master node of our fresh little cluster:
-
+<br><br>
 {% highlight tcsh %}
 [local]$ aws emr ssh --cluster-id j-2AL4XXXXXX5T9 --key-pair-file ~/.ssh/aws.pem
 [hadoop@aws]$ spark-shell
@@ -108,7 +109,7 @@ and run days or years of computations in minutes to hours. For example
 <a href="http://spark.apache.org/examples.html" target="_blank">brute
 force estimating pi</a> to nine digits (about 24 hours of calculation
 time in a few seconds):
-
+<br><br>
 {% highlight scala %}
 scala> sc
 res0: org.apache.spark.SparkContext = org.apache.spark.SparkContext@334e0329
@@ -125,6 +126,7 @@ Pi is roughly 3.141629432
 {% endhighlight %}
 
 Always be sure to terminate the cluster unless you like spending money:
+<br><br>
 {% highlight tcsh%}
 [hadoop@aws]$ exit
 [local]$ aws emr terminate-clusters --cluster-id j-2Z284KB7CTY20

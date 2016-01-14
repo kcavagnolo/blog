@@ -2,3 +2,5 @@ _site*
 _sass_cache*
 *~
 Gemfile.lock
+*ipynb*
+README

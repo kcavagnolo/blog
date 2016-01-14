@@ -91,10 +91,9 @@ tweets: true
      (like this one). The shit that's still broken:<br>
      <ul>
      <li>fancybox</li>
-     <li>ipython integration</li>
-     <li>plotly integration</li>
-     <li>zero branding (logo, tagline, presented material)</li>
-     <li>native code highlighting, like the below</li>
+     <li><s>ipython integration</s> complete</li>
+     <li><s>plotly integration</s> complete</li>
+     <li><s>native code highlighting, like the below</s> complete</li>
      </ul>
      </p>
 

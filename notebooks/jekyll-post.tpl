@@ -9,8 +9,8 @@ author: Ken Cavagnolo
 category : ipynotebooks
 tags: [python, notebook, jupyter]
 comments: true
-tweets: true
 ---
+
 {%- endblock header -%}
 
 {% block in_prompt %}
