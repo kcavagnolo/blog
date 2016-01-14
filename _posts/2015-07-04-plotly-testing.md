@@ -8,8 +8,9 @@ tags: [python, notebook, jupyter]
 comments: true
 ---
 
-<p>Everything needed to get plotly graphics into an ipynb is provided here:
-[Plotly tutorial](https://plot.ly/python/ipython-notebook-tutorial)</p>
+<p>Everything needed to get plotly graphics into an ipynb is provided
+here: <a href="https://plot.ly/python/ipython-notebook-tutorial"
+target="_blank">Plotly Tutorial</a></p>
 
 <p>In order to make the process described in the [IPython Noterbook
 Integration post]({% post_url 2015-06-04-ipynb-testing %}) function
