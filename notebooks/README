@@ -1,0 +1,4 @@
+To convert ipynb to md:
+
+$ ipython nbconvert --config jekyll-post notebook.ipynb
+$ mv notebook.md ../_drafts
