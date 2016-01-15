@@ -11,7 +11,8 @@ tweets: true
 
 {% include JB/setup %}
 
-<div class="blurb">
+<div>
+
      <p>This time I truly mean it: hello, world! I have owned the
      domain kcavagnolo.com for many years, and I never did anything
      with it. The plan had always been to expos&eacute; some aspect of

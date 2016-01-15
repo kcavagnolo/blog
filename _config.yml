@@ -3,8 +3,9 @@ permalink: /:categories/:year/:month/:day/:title
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 highlighter: pygments
 
+name : Science Dataist
 title : Science Dataist
-description: My data science tinkering and thoughts.
+description: Ken Cavagnolo's data science tinkering and thoughts.
 author :
   name : Ken Cavagnolo
   email : ken@kcavagnolo.com
@@ -12,7 +13,12 @@ author :
   twitter : KenCavagnolo
   linkedin : kencavagnolo
 
+url : http://www.kcavagnolo.com/blog
 production_url : http://www.kcavagnolo.com/blog
+
+gems:
+  - jekyll-sitemap
+  - jemoji
 
 JB :
   version : 1.0.0
