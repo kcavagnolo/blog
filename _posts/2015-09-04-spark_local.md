@@ -40,15 +40,16 @@ prompts. Open up a terminal to check version and set env vars:
 {% highlight tcsh %}
 [local]$ ls -l `which java`
 
-lrwxrwxrwx 1 root 22 Apr 10  2015 /usr/bin/java -> /usr/libexec/java_home
+/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/bin/java
 
 [local]$ java -version
 
-java version "1.7.0_71"
-Java(TM) SE Runtime Environment (build 1.7.0_71-b14)
-Java HotSpot(TM) 64-Bit Server VM (build 24.71-b01, mixed mode)
+java version "1.8.0_45"
+Java(TM) SE Runtime Environment (build 1.8.0_45-b14)
+Java HotSpot(TM) 64-Bit Server VM (build 25.45-b02, mixed mode)
 
 [local]$ echo 'setenv JAVA_HOME /usr/libexec/java_home' >> ~/.cshrc
+[local]$ echo 'set path=($JAVA_HOME/bin $path)' >> ~/.cshrc
 [local]$ source ~/.cshrc
 {% endhighlight %}
 </p>
@@ -58,8 +59,8 @@ Java HotSpot(TM) 64-Bit Server VM (build 24.71-b01, mixed mode)
 {% highlight tcsh %}
 [local]$ brew install scala
 [local]$ brew install sbt
-[local]$ echo 'setenv SCALA_HOME /usr/local/bin/scala' >> ~/.cshrc
-[local]$ echo 'set path=($path $SCALA_HOME/bin)' >> ~/.cshrc
+[local]$ echo 'setenv SCALA_HOME /usr/local/scala' >> ~/.cshrc
+[local]$ echo 'set path=($SCALA_HOME/bin $path)' >> ~/.cshrc
 [local]$ source ~/.cshrc
 {% endhighlight %}
 </p>
@@ -71,8 +72,7 @@ target="_blank">Download Spark and save tarball somewhere</a> Install Spark and 
 [local]$ tar -xvzf spark-x.x.x.tar; cd spark-x.x.x
 [local]$ build/sbt clean assembly
 [local]$ echo 'setenv SPARK_HOME /usr/local/spark' >> ~/.cshrc
-[local]$ echo 'setenv PYSPARK_DRIVER_PYTHON ipython' >> ~/.cshrc
-[local]$ echo 'set path=($path $SPARK_HOME/bin)' >> ~/.cshrc
+[local]$ echo 'set path=($SPARK_HOME/bin $path)' >> ~/.cshrc
 [local]$ source ~/.cshrc
 {% endhighlight %}
 </p>
