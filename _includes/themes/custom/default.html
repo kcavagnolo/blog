@@ -34,10 +34,10 @@
   <link rel="pingback" href="http://www.kcavagnolo.com/xmlrpc.php">
   <script type="text/javascript" src="http://www.kcavagnolo.com/wp_content/js/loadCSS.js"></script>
   <script>loadCSS( "http://www.kcavagnolo.com/css/bootstrap.min.css" )</script>
-  <script>loadCSS( "http://www.kcavagnolo.com/css/kcavagnolo.css" )</script>
+  <script>loadCSS( "http://www.kcavagnolo.com/css/kcavagnolo.min.css" )</script>
   <script>loadCSS( "http://www.kcavagnolo.com/font-awesome/css/font-awesome.min.css" )</script>
   <script>loadCSS( "http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" )</script>
-  <script>loadCSS( "http://www.kcavagnolo.com/css/code.css" )</script>
+  <script>loadCSS( "http://www.kcavagnolo.com/css/code.min.css" )</script>
   
   <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -73,15 +73,15 @@
   <script type="text/javascript" src="http://www.kcavagnolo.com/wp_content/js/ganalytics.js"></script>
 
   <!-- atom & rss feed -->
-  <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
-  <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  <link type="application/atom+xml" rel="alternate" href="{{ BASE_PATH }}{{ site.JB.atom_path }}" title="Sitewide ATOM Feed">
+  <link type="application/rss+xml" rel="alternate" href="{{ BASE_PATH }}{{ site.JB.rss_path }}" title="Sitewide RSS Feed">
 
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-blog navbar-fixed-top" role="navigation">
+  <nav class="navbar navbar-blog navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
 	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
