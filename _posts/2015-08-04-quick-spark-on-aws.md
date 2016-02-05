@@ -12,6 +12,13 @@ comments: true
 
 <div class="blurb">
 
+<p><b>UPDATE: If you have Spark 1.6.0 installed locally, the
+reliability of the spark-ec2 script family has been improved and makes
+the below process much simpler -- <a
+href="http://spark.apache.org/docs/latest/ec2-scripts.html"
+target="_blank">see this link</a>. I've updated the post with the
+alternative method at the bottom.</b></p>
+
 <p>When tackling a new project, I will hit an ostensibly simple, yet
 very specific, problem at which point I search reference material for
 an answer. I have no qualms relying on reference material for two
@@ -40,14 +47,14 @@ and secret keys</b>. Using those keys, set some local environment
 variables so you can reference them later:
 <br><br>
 {% highlight tcsh %}
-[local]$ echo 'setenv AWS_ACCESS_KEY "your-aws-access-key-id"' >> ~/.cshrc
-[local]$ echo 'setenv AWS_SECRET_KEY "your-aws-secret-key"' >> ~/.cshrc
+[local]$ echo 'setenv AWS_ACCESS_KEY_ID "your-aws-access-key-id"' >> ~/.cshrc
+[local]$ echo 'setenv AWS_SECRET_ACCESS_KEY "your-aws-secret-key"' >> ~/.cshrc
 [local]$ source ~/.cshrc
 [local]$ setenv
 
 stuff...
-AWS_ACCESS_KEY=<your key>
-AWS_SECRET_KEY=<your secret>
+AWS_ACCESS_KEY_ID=<your key>
+AWS_SECRET_ACCESS_KEY=<your secret>
 {% endhighlight %}
 
 Now <a href="http://aws.amazon.com/cli/" target="_blank">install the
@@ -74,7 +81,7 @@ your account. That's a risk/simplicity left to you:
 With the keys on your machine and in your AWS account, you can now build a cluster:
 <br><br>
 {% highlight tcsh %}
-[local]$ aws emr create-cluster --name SparkCluster --release-label emr-4.2.0 --applications Name=Spark --ec2-attributes KeyName=my-key-pair --instance-type m3.xlarge --instance-count 3 --use-default-roles
+[local]$ aws emr create-cluster --name SparkCluster --release-label emr-4.2.0 --applications Name=Spark --ec2-attributes KeyName=MyKeyPair --instance-type m3.xlarge --instance-count 3 --use-default-roles
 
 {
     "ClusterId": "j-2036HWS8HJGNM"
@@ -132,4 +139,46 @@ Always be sure to terminate the cluster unless you like spending money:
 [local]$ aws emr terminate-clusters --cluster-id j-2Z284KB7CTY20
 {% endhighlight %}
 
+Below is an alternative method to build a cluster on AWS if you have
+Spark installed locally. Add the ec2 folder to your path:
+<br><br>
+{% highlight tcsh %}
+[local]$ echo 'set path=($SPARK_HOME/bin $SPARK_HOME/ec2 $path)' >> ~/.cshrc
+[local]$ spark-ec2 -k MyKeyPair -i ~/.ssh/aws.pem -s 2 launch MySparkCluster --instance-type=m3.xlarge --region=us-east-1 --copy-aws-credentials
+
+...lots of stuff...
+Spark standalone cluster started at http://ec2-52-91-9-214.compute-1.amazonaws.com:8080
+{% endhighlight %}
+
+After the cluster is live (takes ~10m for all the tools to build and
+instlal), check the status using the link provided at the end,
+something like http://<master-hostname>:8080. You can also just ssh in:
+<br><br>
+{% highlight tcsh %}
+[local]$ ssh -i ~/.ssh/aws.pem root@ec2-52-91-9-214.compute-1.amazonaws.com
+
+[aws_spark]$ cd spark
+[aws_spark]$ ./bin/spark-submit --version
+Welcome to Spark version 1.6.0
+
+[aws_spark]$
+{% endhighlight %}
+
+When you're all done, kill the cluster:
+<br><br>
+{% highlight tcsh %}
+[local]$ spark-ec2 destroy MySparkCluster
+
+Searching for existing cluster MySparkCluster in region us-east-1...
+Found 1 master, 2 slaves.
+The following instances will be terminated:
+> ec2-52-91-9-214.compute-1.amazonaws.com
+> ec2-54-84-225-116.compute-1.amazonaws.com
+> ec2-54-165-24-74.compute-1.amazonaws.com
+ALL DATA ON ALL NODES WILL BE LOST!!
+Are you sure you want to destroy the cluster MySparkCluster? (y/N) y
+Terminating master...
+Terminating slaves...
+
+{% endhighlight %}
 </div>
