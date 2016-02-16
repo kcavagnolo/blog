@@ -19,6 +19,7 @@ production_url : http://www.kcavagnolo.com/blog
 gems:
   - jekyll-sitemap
   - jemoji
+  - jekyll-gist
 
 JB :
   version : 1.0.0
