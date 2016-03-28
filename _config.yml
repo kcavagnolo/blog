@@ -10,7 +10,6 @@ author :
   name : Ken Cavagnolo
   email : ken@kcavagnolo.com
   github : kcavagnolo
-  twitter : KenCavagnolo
   linkedin : kencavagnolo
 
 url : http://www.kcavagnolo.com/blog
@@ -55,7 +54,7 @@ JB :
         baseURL : 
         idsite : 
   sharing :
-    provider : twitter
+    provider :
     
   # Settings for all other include helpers can be defined by creating 
   # a hash with key named for the given helper. ex:
