@@ -1,34 +1,35 @@
 ---
 layout : default
 title : Science Dataist
-description : Tinkering and thoughts
+description : Tinkering and sometimes thoughts
 author : Ken Cavagnolo
 ---
 
 {% include JB/setup %}
 
 <div id="page-header" class="page-header">
-  <h1>{{ page.title }}</h1>
-  <h4>{{ page.description }}</h4>
-  <div id="ButtonBarDivUnit" class="ButtonBarDiv">
-    <div>
-      <a target="_blank" href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp%3A%2F%2Fwww.kcavagnolo.com%2Fblog%2Fatom.xml"><input type="image" src="http://s3.feedly.com/img/follows/feedly-follow-rectangle-flat-medium_2x.png" alt="follow in feedly" width="71" height="28"></a>
+    <h1>{{ page.title }}</h1>
+    <h4>{{ page.description }}</h4>
+    <div id="ButtonBarDivUnit" class="ButtonBarDiv">
+        <div>
+            <a target="_blank" href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp%3A%2F%2Fwww.kcavagnolo.com%2Fblog%2Fatom.xml">
+                <input type="image" src="http://s3.feedly.com/img/follows/feedly-follow-rectangle-flat-medium_2x.png" alt="follow in feedly" width="71" height="28"></a>
+        </div>
     </div>
-  </div>
 </div>
 
 <div class="posts">
-  {% for post in site.posts %}
-  <article class="post">
-    <h2 class="post-title">
-      <a href="{{ BASE_PATH }}{{ post.url }}">
-        <!-- {{ post.title }} {% if post.tagline %}&mdash; {{ post.tagline }} {% endif %} -->
-	{{ post.title }}
-      </a>
-    </h2>
-    {% if post.author %} By {{ post.author }} on {% endif %}
-    <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time><br>
-    {% for tag in post.tags %}<a href="/tag/{{ tag }}/">{{ tag }}</a> {% endfor %}
-  </article>
-  {% endfor %}
+    {% for post in site.posts %}
+    <article class="post">
+        <h2 class="post-title">
+            <a href="{{ BASE_PATH }}{{ post.url }}">
+                <!-- {{ post.title }} {% if post.tagline %}&mdash; {{ post.tagline }} {% endif %} -->
+                {{ post.title }}
+            </a>
+        </h2>
+        {% if post.author %} By {{ post.author }} on {% endif %}
+        <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time><br>
+        {% for tag in post.tags %}<a href="/tag/{{ tag }}/">{{ tag }}</a> {% endfor %}
+    </article>
+    {% endfor %}
 </div>

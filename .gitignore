@@ -3,3 +3,4 @@ _sass_cache*
 *~
 Gemfile.lock
 *ipynb*
+.idea/

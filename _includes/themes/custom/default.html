@@ -109,15 +109,25 @@
       {{ content }}
     </div>
   </section>
-  
+
+  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="row">
-	<div class="col-lg-10 col-lg-offset-1 text-center">
+        <div class="col-lg-10 col-lg-offset-1 text-center">
           <p class="text-muted">
-	    &copy; {{ site.time | date: '%Y' }} Posts are licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-	  <a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/3.0/88x31.png" /></a>
-	</div>
+            This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+            Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br>
+            &copy;
+            <script type="text/javascript">
+                document.write(new Date().getFullYear());
+            </script>. All Rights Reserved.
+            Visit <a href="https://github.com/kcavagnolo/blog/tree/gh-pages">the code repo</a> for technology
+            acknowledgements and the site disclaimer.<br>
+            Last Updated: <script type="text/javascript">
+              document.write(new Date(document.lastModified));
+          </script>
+        </div>
       </div>
     </div>
   </footer>
